@@ -1,11 +1,12 @@
 var express = require('express');
 var server = express();
-var port = process.env.PORT || 8080;
-var logger = reuire('./middleware/logger.js');
+
+var logger = require('./middleware/logger.js');
 var axios = require('axios');
 var cors = require('cors');
 var forecastRouter = require('./routers/forecast.router.js');
 var indexRouter = require('./routers/index.router.js');
+var port = process.env.PORT || 8080;
 
 server.use(express.static(__dirname + '/public'));
 server.use(logger);
